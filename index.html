@@ -1,0 +1,418 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Projektowanie wnętrz - ARS Projekt, sztuka tworzenia wnętrz</title>
+<meta name="description" content="Pracownia projektowania wnętrz ARS Projekt: domy, mieszkania, łazienki, kuchnie i wnętrza komercyjne. Cały projekt od razu w 3D, dokumentacja i nadzór autorski.">
+<meta name="robots" content="noindex,nofollow">
+<link rel="preload" href="fonts/jost-rdzen.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" as="image" href="img/hero-1600.webp" imagesrcset="img/hero-640.webp 640w,img/hero-1024.webp 1024w,img/hero-1600.webp 1600w,img/hero-2000.webp 2000w" imagesizes="(max-width:760px) 160vw,100vw" fetchpriority="high">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%231B1C1E'/%3E%3Cpath d='M26 50H12V26L32 12l20 14v24' fill='none' stroke='%23fff' stroke-width='4'/%3E%3C/svg%3E">
+<style>
+@font-face{font-family:Jost;font-weight:300 700;font-display:swap;src:url(fonts/jost-rdzen.woff2) format("woff2");unicode-range:U+0020-007E,U+00A0-00FF,U+2013-2026,U+20AC}
+@font-face{font-family:Jost;font-weight:300 700;font-display:swap;src:url(fonts/jost-pl.woff2) format("woff2");unicode-range:U+0104-0107,U+0118-0119,U+0141-0144,U+015A-015B,U+0179-017C}
+:root{--czern:#1B1C1E;--grafit:#2A2B2E;--szary:#F1F2F3;--linia:#DCDEE0;--mosiadz:#CCA375;--mosiadz-t:#8A6638;--tekst:#3A3B3F;--hdr:72px;--wrap:min(90vw,1680px)}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:#fff;color:var(--tekst);font:400 17px/1.6 Jost,system-ui,sans-serif;-webkit-tap-highlight-color:transparent}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit}
+h1,h2,h3{font-weight:400;color:var(--czern);line-height:1.15;margin:0}
+h2{font-size:clamp(30px,3.2vw,52px);font-weight:300;letter-spacing:-.01em}
+h3{font-size:21px;font-weight:500}
+p{margin:0 0 1em}
+.wrap{width:var(--wrap);margin:0 auto}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:12px;min-height:54px;padding:0 30px;background:var(--mosiadz);color:var(--czern);text-decoration:none;font-weight:500;font-size:17px;border:0;cursor:pointer;font-family:inherit;transition:background .2s}
+.btn:hover{background:#d8b48b}
+.btn svg{width:20px;height:14px}
+
+/* naglowek */
+.hdr{position:sticky;top:0;z-index:50;height:var(--hdr);background:#fff;border-bottom:1px solid var(--linia)}
+.hdr .wrap{height:100%;display:flex;align-items:center;justify-content:space-between;gap:24px}
+.logo img{height:46px;width:auto}
+.nav{display:flex;gap:clamp(18px,2.2vw,40px);align-items:center}
+.nav a{text-decoration:none;font-size:16px;color:var(--czern);padding:6px 0;border-bottom:1px solid transparent}
+.nav a:hover{border-color:var(--mosiadz)}
+.nav .tel{font-weight:500;display:inline-flex;gap:8px;align-items:center}
+.ikonatel{width:18px;height:18px}
+.burger,.teltop,.menu-mob{display:none}
+
+/* pierwszy ekran */
+.hero{position:relative;min-height:calc(100svh - var(--hdr));max-width:2200px;margin:0 auto;display:flex;align-items:center;overflow:hidden;background:var(--czern)}
+.hero-foto{position:absolute;inset:0}
+.hero-foto img{width:100%;height:100%;object-fit:cover;object-position:60% 50%}
+.hero-foto::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(18,18,20,.78) 0%,rgba(18,18,20,.55) 38%,rgba(18,18,20,.05) 70%)}
+.hero-in{position:relative;width:var(--wrap);margin:0 auto;padding:60px 0}
+.dom{position:relative;max-width:640px;color:#fff;--kol:#fff}
+.dom-dach{display:block;width:100%;height:clamp(48px,5vw,84px)}
+.dom-dach path{fill:none;stroke:var(--kol);stroke-width:2;vector-effect:non-scaling-stroke}
+.dom-sciany{border-left:2px solid var(--kol);border-right:2px solid var(--kol);padding:clamp(18px,2.4vw,40px) clamp(22px,3vw,52px) clamp(30px,3.4vw,56px);position:relative}
+.dom-sciany::after{content:"";position:absolute;left:-2px;bottom:0;width:38%;height:2px;background:var(--kol)}
+.dom-sciany::before{content:"";position:absolute;right:-2px;bottom:0;width:2px;height:0}
+.hero h1{color:#fff;font-weight:300;font-size:clamp(34px,4.1vw,64px);line-height:1.08;letter-spacing:-.015em;margin-bottom:22px}
+.hero .lead{font-size:clamp(17px,1.25vw,20px);line-height:1.55;color:rgba(255,255,255,.9);max-width:30em;margin-bottom:30px}
+.hero .podpis{margin:26px 0 0;font-size:15px;color:rgba(255,255,255,.75)}
+.hero .podpis a{color:#fff;font-weight:500;text-decoration:none}
+
+/* sekcje */
+section{scroll-margin-top:var(--hdr)}
+.sek{padding:clamp(70px,8vw,130px) 0}
+.szary{background:var(--szary)}
+.ciemna{background:var(--czern);color:#C9CBCE}
+.ciemna h2,.ciemna h3{color:#fff}
+.glowa{display:flex;justify-content:space-between;align-items:flex-end;gap:30px;margin-bottom:clamp(34px,4vw,60px)}
+.glowa p{max-width:34em;margin:0;font-size:18px}
+
+/* intro */
+.intro{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:clamp(40px,6vw,120px);align-items:center}
+.intro h2{margin-bottom:28px}
+.intro .tekst p{font-size:18px;max-width:38em}
+.cytat{border-left:2px solid var(--mosiadz);padding:4px 0 4px 26px;margin:0}
+.cytat p{font-size:clamp(22px,2vw,30px);font-weight:300;line-height:1.35;color:var(--czern);margin-bottom:12px}
+.cytat cite{font-style:normal;font-size:15px;color:#6b6d72}
+
+/* kategorie */
+.kat{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(18px,1.8vw,30px)}
+.karta{text-decoration:none;display:block;min-width:0}
+.karta .dach{display:block;width:100%;height:26px;margin-bottom:-1px}
+.karta .dach path{fill:none;stroke:var(--czern);stroke-width:1.5;vector-effect:non-scaling-stroke}
+.karta figure{margin:0;overflow:hidden;aspect-ratio:4/3;background:#ddd}
+.karta img{width:100%;height:100%;object-fit:cover;transition:transform .6s}
+.karta:hover img{transform:scale(1.04)}
+.karta h3{margin:16px 0 4px}
+.karta p{margin:0;font-size:16px;color:#5d5f64}
+
+/* proces */
+.proces{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(40px,6vw,110px);align-items:start}
+.proces figure{margin:0;position:sticky;top:calc(var(--hdr) + 30px)}
+.proces figure img{width:100%;aspect-ratio:16/10;object-fit:cover}
+.proces figcaption{font-size:14px;color:#8d9095;margin-top:10px}
+.proces h2{margin-bottom:22px}
+.proces .wst{font-size:18px;margin-bottom:34px;max-width:36em}
+.etapy{list-style:none;margin:0;padding:0}
+.etapy li{border-top:1px solid rgba(255,255,255,.14);padding:24px 0}
+.etapy li:last-child{border-bottom:1px solid rgba(255,255,255,.14)}
+.etapy h3{margin-bottom:8px;display:flex;gap:14px;align-items:baseline}
+.etapy h3 span{color:var(--mosiadz);font-weight:400;font-size:16px}
+.etapy p{margin:0;font-size:16.5px}
+
+/* realizacje */
+.strz{display:flex;gap:10px}
+.strz button{width:52px;height:52px;border:1px solid var(--czern);background:#fff;cursor:pointer;display:grid;place-items:center}
+.strz button:hover{background:var(--czern)}
+.strz button:hover svg path{stroke:#fff}
+.strz svg{width:22px;height:14px}
+.strz svg path{fill:none;stroke:var(--czern);stroke-width:1.6}
+.pas{display:grid;grid-auto-flow:column;grid-auto-columns:calc((100% - 2*clamp(18px,1.8vw,30px))/3);gap:clamp(18px,1.8vw,30px);overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;padding-bottom:4px;cursor:grab}
+.pas::-webkit-scrollbar{display:none}
+.pas.ciag{cursor:grabbing;scroll-snap-type:none}
+.real{display:block;align-self:start;scroll-snap-align:start;min-width:0;background:none;border:0;padding:0;text-align:left;font:inherit;color:inherit;cursor:pointer}
+.real figure{margin:0;aspect-ratio:4/3;overflow:hidden;position:relative;background:#ddd}
+.real img{width:100%;height:100%;object-fit:cover;transition:transform .6s;pointer-events:none}
+.real:hover img{transform:scale(1.04)}
+.real .ile{position:absolute;right:12px;bottom:12px;background:rgba(27,28,30,.82);color:#fff;font-size:14px;padding:5px 11px}
+.real h3{margin:18px 0 2px}
+.real .gdzie{font-size:15px;color:var(--mosiadz-t);margin:0 0 8px}
+.real p{font-size:16px;margin:0;color:#55575c}
+
+/* o mnie */
+.omnie{display:grid;grid-template-columns:minmax(0,340px) minmax(0,1fr);gap:clamp(40px,7vw,130px);align-items:center}
+.portret{position:relative;padding:0 18px 18px 0}
+.portret img{width:100%;clip-path:polygon(0 18%,50% 0,100% 18%,100% 100%,0 100%)}
+.portret svg{position:absolute;left:14px;top:14px;width:calc(100% - 14px);height:calc(100% - 14px);overflow:visible;pointer-events:none}
+.portret svg path{fill:none;stroke:var(--mosiadz);stroke-width:2;vector-effect:non-scaling-stroke}
+.omnie h2{margin-bottom:26px}
+.omnie p{font-size:18px;max-width:40em}
+
+/* kontakt */
+.kontakt{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);gap:clamp(40px,6vw,120px)}
+.kontakt h2{margin-bottom:24px}
+.dane{margin-top:34px;display:grid;gap:22px}
+.dane a{text-decoration:none;display:block}
+.dane small{display:block;font-size:14px;color:#6b6d72}
+.dane strong{font-weight:400;font-size:clamp(22px,2vw,30px);color:var(--czern)}
+.dane strong:hover{color:var(--mosiadz-t)}
+.social{display:flex;gap:22px;margin-top:8px;font-size:16px}
+.social a{border-bottom:1px solid var(--mosiadz)}
+form{background:#fff;padding:clamp(24px,3vw,46px);display:grid;gap:16px;grid-template-columns:1fr 1fr}
+form .cala{grid-column:1/-1}
+label{display:grid;gap:6px;font-size:14px;color:#55575c}
+input,select,textarea{font:inherit;font-size:16px;color:var(--czern);border:1px solid #C9CCD0;background:#fff;padding:13px 14px;border-radius:0;width:100%;min-width:0}
+input:focus,select:focus,textarea:focus{outline:2px solid var(--mosiadz);outline-offset:-1px}
+textarea{min-height:120px;resize:vertical}
+.uwaga{font-size:14px;color:#6b6d72;margin:0}
+.uwaga.ok{color:var(--mosiadz-t)}
+
+/* stopka */
+.stopka{background:var(--czern);color:#A4A7AC;padding:60px 0 34px;font-size:15px}
+.stopka .gora{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:40px;padding-bottom:40px;border-bottom:1px solid rgba(255,255,255,.12)}
+.stopka img{height:58px;width:auto;margin-bottom:16px}
+.stopka h4{color:#fff;font-weight:500;font-size:16px;margin:0 0 12px}
+.stopka ul{list-style:none;margin:0;padding:0;display:grid;gap:7px}
+.stopka a{text-decoration:none}
+.stopka a:hover{color:#fff}
+.stopka .dol{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;padding-top:24px}
+
+/* lightbox */
+.lb{position:fixed;inset:0;z-index:100;background:rgba(14,14,16,.95);display:none;align-items:center;justify-content:center;flex-direction:column}
+.lb.on{display:flex}
+.lb-ram{width:min(92vw,1400px);height:min(76svh,1000px);display:flex;align-items:center;justify-content:center;touch-action:pan-y}
+.lb img{max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain}
+.lb-opis{color:#ddd;margin-top:14px;font-size:16px;text-align:center;padding:0 60px}
+.lb button{position:absolute;background:none;border:0;color:#fff;cursor:pointer;width:56px;height:56px;display:grid;place-items:center}
+.lb button svg{width:26px;height:18px}
+.lb button path{fill:none;stroke:#fff;stroke-width:1.6}
+.lb .zamk{top:10px;right:10px;font-size:34px;line-height:1;font-weight:300}
+.lb .pop{left:10px;top:50%;transform:translateY(-50%)}
+.lb .nast{right:10px;top:50%;transform:translateY(-50%)}
+
+/* pasek telefonu */
+.mob{display:none}
+
+@media (min-width:1700px){
+  .kat{grid-template-columns:repeat(6,minmax(0,1fr))}
+  .karta figure{aspect-ratio:4/5}
+  .pas{grid-auto-columns:calc((100% - 3*clamp(18px,1.8vw,30px))/4)}
+}
+@media (max-width:1100px){
+  .nav a:not(.tel){display:none}
+  .pas{grid-auto-columns:calc((100% - clamp(18px,1.8vw,30px))/2)}
+  .stopka .gora{grid-template-columns:1fr 1fr}
+  .stopka .gora>div:first-child{grid-column:1/-1}
+}
+@media (max-width:900px){
+  .intro,.proces,.omnie,.kontakt{grid-template-columns:minmax(0,1fr)}
+  .proces figure{position:static}
+  .omnie .portret{max-width:260px}
+}
+@media (max-width:760px){
+  :root{--hdr:60px;--wrap:calc(100vw - 40px)}
+  body{font-size:16.5px}
+  .logo img{height:38px}
+  .nav{display:none}
+  .teltop,.burger{display:grid;place-items:center;width:44px;height:44px;border:0;background:none;color:var(--czern);padding:0}
+  .hdr-akcje{display:flex;gap:4px;margin-right:-8px}
+  .burger span{display:block;width:24px;height:1.5px;background:var(--czern);box-shadow:0 -7px 0 var(--czern),0 7px 0 var(--czern)}
+  .menu-mob{position:fixed;top:var(--hdr);left:0;right:0;background:#fff;border-bottom:1px solid var(--linia);padding:10px 20px 24px;display:none;z-index:49}
+  .menu-mob.on{display:block}
+  .menu-mob a{display:block;padding:14px 0;border-bottom:1px solid var(--linia);text-decoration:none;font-size:19px;color:var(--czern)}
+  .hero{flex-direction:column;align-items:stretch;background:#fff}
+  .hero-foto{position:relative;inset:auto;flex:1 1 0;min-height:min(56vw,26svh)}
+  .hero-foto img{position:absolute;inset:0;object-position:22% 50%}
+  .hero-foto::after{display:none}
+  .hero-in{flex:0 0 auto;padding:6px 0 20px}
+  .dom{--kol:var(--czern);color:var(--tekst)}
+  .dom-dach{height:clamp(26px,5svh,40px)}
+  .dom-sciany{padding:6px 18px 20px}
+  .hero h1{color:var(--czern);font-size:clamp(27px,min(8vw,4.6svh),36px);margin-bottom:12px}
+  .hero .lead{color:var(--tekst);font-size:clamp(15px,2.3svh,17px);margin-bottom:26px}
+  .hero .btn{width:100%}
+  .hero .podpis{display:none}
+  .glowa{display:block}
+  .glowa p{margin-top:14px}
+  .strz{display:none}
+  .kat{grid-auto-flow:column;grid-template-columns:none;grid-auto-columns:78%;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;margin-right:-20px;padding-right:20px}
+  .kat::-webkit-scrollbar{display:none}
+  .karta{scroll-snap-align:start}
+  .pas{grid-auto-columns:84%;margin-right:-20px;padding-right:20px}
+  form{grid-template-columns:minmax(0,1fr);padding:22px}
+  .stopka .gora{grid-template-columns:1fr 1fr;gap:28px}
+  .mob{position:fixed;left:0;right:0;bottom:0;z-index:40;display:grid;grid-template-columns:1fr 1fr;transform:translateY(110%);transition:transform .25s;padding-bottom:env(safe-area-inset-bottom);background:var(--czern)}
+  .mob.widac{transform:none}
+  .mob a{display:flex;align-items:center;justify-content:center;gap:8px;height:54px;text-decoration:none;color:#fff;font-weight:500}
+  .mob a+a{background:var(--mosiadz);color:var(--czern)}
+  .stopka{padding-bottom:90px}
+  .lb-opis{padding:0 20px}
+  .lb .pop,.lb .nast{top:auto;bottom:16px;transform:none}
+}
+@media (max-width:760px) and (max-height:700px){
+  .dom-sciany{padding-bottom:16px}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+<style>
+.wylinka-badge{display:inline-flex;align-items:center;gap:.4em;color:inherit;text-decoration:none;font-size:.875em;line-height:1;opacity:.85}
+.wylinka-badge:hover,.wylinka-badge:focus-visible{opacity:1}
+.wylinka-badge:focus-visible{outline:2px solid currentColor;outline-offset:3px;border-radius:2px}
+.wylinka-badge svg{width:18px;height:18px;flex:none;overflow:visible}
+.wylinka-badge b{font-weight:600}
+.wylinka-badge .wy-old{opacity:.45;transform-origin:40px 30px;transition:transform .32s cubic-bezier(.3,.7,.4,1),opacity .32s ease-out}
+.wylinka-badge .wy-pod{opacity:0;transition:opacity .2s ease-out .08s}
+.wylinka-badge:hover .wy-old,.wylinka-badge:focus-visible .wy-old{transform:translate(9px,7px) rotate(9deg);opacity:0}
+.wylinka-badge:hover .wy-pod,.wylinka-badge:focus-visible .wy-pod{opacity:1}
+@media (prefers-reduced-motion:reduce){.wylinka-badge .wy-old,.wylinka-badge .wy-pod{transition:none}.wylinka-badge:hover .wy-old,.wylinka-badge:focus-visible .wy-old{transform:none;opacity:.45}.wylinka-badge:hover .wy-pod,.wylinka-badge:focus-visible .wy-pod{opacity:0}}
+</style>
+</head>
+<body>
+<header class="hdr">
+  <div class="wrap">
+    <a class="logo" href="#top" aria-label="ARS Projekt, strona główna"><img src="img/logo-dark.png" width="354" height="163" alt="ARS Projekt"></a>
+    <nav class="nav" aria-label="Menu">
+      <a href="#oferta">Oferta</a>
+      <a href="#proces">Jak pracuję</a>
+      <a href="#realizacje">Realizacje</a>
+      <a href="#o-mnie">O mnie</a>
+      <a href="#kontakt">Kontakt</a>
+      <a class="tel" href="tel:+48693307962"><svg class="ikonatel" viewBox="0 0 20 20" aria-hidden="true"><path d="M6.5 13.5V18H2.5V7.5L10 2l7.5 5.5V18h-4" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M8.5 11h3" stroke="currentColor" stroke-width="1.5"/></svg>693 307 962</a>
+    </nav>
+    <div class="hdr-akcje">
+      <a class="teltop" href="tel:+48693307962" aria-label="Zadzwoń: 693 307 962"><svg class="ikonatel" viewBox="0 0 20 20" aria-hidden="true" style="width:22px;height:22px"><path d="M5 3.5h3l1.2 3.4-1.8 1.2a9 9 0 0 0 4.5 4.5l1.2-1.8 3.4 1.2v3a1.5 1.5 0 0 1-1.6 1.5A14 14 0 0 1 3.5 5.1 1.5 1.5 0 0 1 5 3.5z" fill="none" stroke="currentColor" stroke-width="1.4"/></svg></a>
+      <button class="burger" aria-label="Otwórz menu" aria-expanded="false"><span></span></button>
+    </div>
+  </div>
+</header>
+<div class="menu-mob" id="menu">
+  <a href="#oferta">Oferta</a><a href="#proces">Jak pracuję</a><a href="#realizacje">Realizacje</a><a href="#o-mnie">O mnie</a><a href="#kontakt">Kontakt</a>
+</div>
+
+<main id="top">
+<section class="hero">
+  <div class="hero-foto">
+    <img src="img/hero-1600.webp" srcset="img/hero-640.webp 640w,img/hero-1024.webp 1024w,img/hero-1600.webp 1600w,img/hero-2000.webp 2000w" sizes="(max-width:760px) 160vw,100vw" width="2000" height="1331" alt="Kuchnia z ryflowanym drewnem i matową czernią, dom w Fontenay-sous-Bois" fetchpriority="high">
+  </div>
+  <div class="hero-in">
+    <div class="dom">
+      <svg class="dom-dach" viewBox="0 0 100 10" preserveAspectRatio="none" aria-hidden="true"><path d="M0 10 L50 0 L100 10"/></svg>
+      <div class="dom-sciany">
+        <h1>Projektowanie wnętrz, które opowiadają o&nbsp;Tobie</h1>
+        <p class="lead">Domy, mieszkania i wnętrza komercyjne. Cały projekt od razu w 3D, potem dokumentacja, zakupy i nadzór nad wykończeniem.</p>
+        <a class="btn" href="#kontakt">Umów pierwsze spotkanie <svg viewBox="0 0 22 14" aria-hidden="true"><path d="M0 7h20M14 1l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></a>
+        <p class="podpis">albo zadzwoń: <a href="tel:+48693307962">693 307 962</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sek" id="o-pracowni">
+  <div class="wrap intro">
+    <div class="tekst">
+      <h2>Ars Projekt, czyli sztuka tworzenia wnętrz</h2>
+      <p>Pracownia powstała z pasji do pięknych przestrzeni, dobrego designu i mebli najlepszej jakości. Najważniejszy jest człowiek, dla którego projektuję: jego gust, codzienne nawyki i potrzeby wszystkich domowników.</p>
+      <p>Lubię swobodnie łączyć style i tworzyć rozwiązania ponadczasowe, ale praktyczne. Stawiam na prostotę, stonowane kolory, naturalne materiały i rzemiosło.</p>
+    </div>
+    <blockquote class="cytat">
+      <p>„Twój dom powinien opowiadać historię o tym, kim naprawdę jesteś, być kolekcją tego, co kochasz.”</p>
+      <cite>Nate Berkus</cite>
+    </blockquote>
+  </div>
+</section>
+
+<section class="sek szary" id="oferta">
+  <div class="wrap">
+    <div class="glowa">
+      <h2>Co projektuję</h2>
+      <p>Pojedyncze pomieszczenia albo całe domy, wnętrza prywatne i komercyjne, a także tarasy i ogrody.</p>
+    </div>
+    <div class="kat">
+      <a class="karta" href="#kontakt"><svg class="dach" viewBox="0 0 100 10" preserveAspectRatio="none" aria-hidden="true"><path d="M0 10 L50 0 L100 10"/></svg><figure><img src="img/k-salon-640.webp" srcset="img/k-salon-640.webp 640w,img/k-salon-1000.webp 1000w" sizes="(max-width:760px) 78vw,(max-width:1700px) 30vw,16vw" width="640" height="427" loading="lazy" alt="Wizualizacja salonu z kuchnią"></figure><h3>Salon i kuchnia</h3><p>Serce domu, skrojone na miarę rodziny.</p></a>
+      <a class="karta" href="#kontakt"><svg class="dach" viewBox="0 0 100 10" preserveAspectRatio="none" aria-hidden="true"><path d="M0 10 L50 0 L100 10"/></svg><figure><img src="img/k-sypialnie-640.webp" srcset="img/k-sypialnie-640.webp 640w,img/k-sypialnie-1000.webp 1000w" sizes="(max-width:760px) 78vw,(max-width:1700px) 30vw,16vw" width="640" height="360" loading="lazy" alt="Sypialnia z tapetą w kwiaty"></figure><h3>Sypialnie</h3><p>Miejsce, w którym po całym dniu można odpocząć.</p></a>
+      <a class="karta" href="#kontakt"><svg class="dach" viewBox="0 0 100 10" preserveAspectRatio="none" aria-hidden="true"><path d="M0 10 L50 0 L100 10"/></svg><figure><img src="img/k-lazienki-640.webp" srcset="img/k-lazienki-640.webp 640w,img/k-lazienki-1000.webp 1000w" sizes="(max-width:760px) 78vw,(max-width:1700px) 30vw,16vw" width="640" height="360" loading="lazy" alt="Łazienka z ciemnozieloną ścianą i drewnianą szafką"></figure><h3>Łazienki</h3><p>Harmonijne, spójne z resztą domu, na lata.</p></a>
+      <a class="karta" href="#kontakt"><svg class="dach" viewBox="0 0 100 10" preserveAspectRatio="none" aria-hidden="true"><path d="M0 10 L50 0 L100 10"/></svg><figure><img src="img/k-dzieci-640.webp" srcset="img/k-dzieci-640.webp 640w,img/k-dzieci-1000.webp 1000w" sizes="(max-width:760px) 78vw,(max-width:1700px) 30vw,16vw" width="640" height="360" loading="lazy" alt="Pokój dziecięcy w różach i szarościach"></figure><h3>Pokoje dzieci</h3><p>Projekt, w którym liczy się zdanie młodego człowieka.</p></a>
+      <a class="karta" href="#kontakt"><svg class="dach" viewBox="0 0 100 10" preserveAspectRatio="none" aria-hidden="true"><path d="M0 10 L50 0 L100 10"/></svg><figure><img src="img/k-komercyjne-640.webp" srcset="img/k-komercyjne-640.webp 640w,img/k-komercyjne-1000.webp 1000w" sizes="(max-width:760px) 78vw,(max-width:1700px) 30vw,16vw" width="640" height="360" loading="lazy" alt="Hol przychodni z siedziskami i grafikami"></figure><h3>Wnętrza komercyjne</h3><p>Przychodnie, hotele, kawiarnie, przedszkola.</p></a>
+      <a class="karta" href="#kontakt"><svg class="dach" viewBox="0 0 100 10" preserveAspectRatio="none" aria-hidden="true"><path d="M0 10 L50 0 L100 10"/></svg><figure><img src="img/k-ogrody-640.webp" srcset="img/k-ogrody-640.webp 640w,img/k-ogrody-1000.webp 1000w" sizes="(max-width:760px) 78vw,(max-width:1700px) 30vw,16vw" width="640" height="360" loading="lazy" alt="Ogród z basenem i tarasem"></figure><h3>Ogrody i tarasy</h3><p>Aranżacje tarasów, ogrodów i dobór roślin do domu.</p></a>
+    </div>
+  </div>
+</section>
+
+<section class="sek ciemna" id="proces">
+  <div class="wrap proces">
+    <figure>
+      <img src="img/proces-800.webp" srcset="img/proces-800.webp 800w,img/proces-1400.webp 1400w" sizes="(max-width:900px) 90vw,45vw" width="800" height="450" loading="lazy" alt="Fotorealistyczna wizualizacja salonu przygotowana w projekcie">
+      <figcaption>Fotorealistyczna wizualizacja z projektu: tak klient widzi wnętrze przed remontem.</figcaption>
+    </figure>
+    <div>
+      <h2>Jak pracuję</h2>
+      <p class="wst">Nie pokazuję kilku płaskich rzutów do zgadywania. Od razu pracujemy na fotorealistycznych wizualizacjach, więc wiadomo, jak będzie wyglądał dom, zanim zacznie się remont.</p>
+      <ol class="etapy">
+        <li><h3><span>1</span>Poznajmy się</h3><p>Rozmawiamy o funkcji i charakterze wnętrza, o tym, jak spędzacie czas i czego potrzebuje każdy domownik. Potem inwentaryzacja pomiarowa i zdjęcia albo praca na rzutach, jeśli dom jest w budowie.</p></li>
+        <li><h3><span>2</span>Tworzymy razem w 3D</h3><p>Cały projekt w wizualizacjach: architektura wnętrza, materiały, wyposażenie i oświetlenie. Zmieniamy i dopracowujemy, aż powstanie wersja ostateczna.</p></li>
+        <li><h3><span>3</span>Dokumentacja i zakupy</h3><p>Komplet rysunków technicznych, zabudów meblowych i detali oraz zestawienia materiałów i wyposażenia. Na tej podstawie można przejść do zakupów.</p></li>
+        <li><h3><span>4</span>Nadzór autorski</h3><p>Pilnuję logistyki dostaw i przebiegu prac wykończeniowych. Współpracuję ze sprawdzonymi ekipami i firmami branżowymi.</p></li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<section class="sek" id="realizacje">
+  <div class="wrap">
+    <div class="glowa">
+      <h2>Realizacje</h2>
+      <div class="strz"><button class="w-lewo" aria-label="Poprzednie realizacje"><svg viewBox="0 0 22 14"><path d="M22 7H2M8 1L2 7l6 6"/></svg></button><button class="w-prawo" aria-label="Następne realizacje"><svg viewBox="0 0 22 14"><path d="M0 7h20M14 1l6 6-6 6"/></svg></button></div>
+    </div>
+    <div class="pas" id="pas"><button class="real" data-r="dom-fontenay-sous-bois"><figure><img src="img/r-dom-fontenay-sous-bois-1-720.webp" width="720" height="540" loading="lazy" alt="Dom w Fontenay-sous-Bois, Francja"><span class="ile">2 zdjęcia</span></figure><h3>Dom w Fontenay-sous-Bois</h3><p class="gdzie">Francja</p><p>Ryflowane drewno i matowa czerń w akrylu, bezuchwytowe listwy i długa wyspa z cienkim blatem.</p></button>
+<button class="real" data-r="dom-w-gouvieux"><figure><img src="img/r-dom-w-gouvieux-1-720.webp" width="720" height="540" loading="lazy" alt="Dom w Gouvieux, Francja"><span class="ile">3 zdjęcia</span></figure><h3>Dom w Gouvieux</h3><p class="gdzie">Francja</p><p>Elegancki dom na północ od Paryża, odrestaurowany przez właścicieli od podstaw.</p></button>
+<button class="real" data-r="lubnow"><figure><img src="img/r-lubnow-1-720.webp" width="720" height="540" loading="lazy" alt="Dom w Lubnowie, pod Wrocławiem"><span class="ile">3 zdjęcia</span></figure><h3>Dom w Lubnowie</h3><p class="gdzie">pod Wrocławiem</p><p>Dom na wzór starych zabudowań wiejskich: belkowanie, duże okna, ręcznie postarzana podłoga i drewno z odzysku w kuchni.</p></button>
+<button class="real" data-r="mieszkanie-na-krzykach-we-wroclawiu"><figure><img src="img/r-mieszkanie-na-krzykach-we-wroclawiu-1-720.webp" width="720" height="540" loading="lazy" alt="Mieszkanie na Krzykach, Wrocław"><span class="ile">3 zdjęcia</span></figure><h3>Mieszkanie na Krzykach</h3><p class="gdzie">Wrocław</p><p>Totalna monochromia w grafitach i granacie, epoksydowa podłoga i miedziana blacha w kuchni.</p></button>
+<button class="real" data-r="przychodnia-ginemedica-ovo-we-wroclawiu"><figure><img src="img/r-przychodnia-ginemedica-ovo-we-wroclawiu-1-720.webp" width="720" height="540" loading="lazy" alt="Przychodnia Ginemedica OVO, Wrocław"><span class="ile">3 zdjęcia</span></figure><h3>Przychodnia Ginemedica OVO</h3><p class="gdzie">Wrocław</p><p>Biel i drewno, recepcja z podświetlanym szkłem i obrazy Andrzeja Tylkowskiego w poczekalni.</p></button>
+<button class="real" data-r="dom-w-kristianstad"><figure><img src="img/r-dom-w-kristianstad-1-720.webp" width="720" height="540" loading="lazy" alt="Dom w Kristianstad, Szwecja"><span class="ile">3 zdjęcia</span></figure><h3>Dom w Kristianstad</h3><p class="gdzie">Szwecja</p><p>Bielone drewno i cegła, biała kuchnia z frezem i grubym ciemnym blatem.</p></button>
+<button class="real" data-r="mieszkanie-stare-miasto-we-wroclawiu"><figure><img src="img/r-mieszkanie-stare-miasto-we-wroclawiu-1-720.webp" width="720" height="540" loading="lazy" alt="Mieszkanie na Starym Mieście, Wrocław"><span class="ile">3 zdjęcia</span></figure><h3>Mieszkanie na Starym Mieście</h3><p class="gdzie">Wrocław</p><p>Klasyczna kuchnia z frezowanymi frontami, przeszkleniami i cienkim blatem kwarcowym.</p></button>
+<button class="real" data-r="szeregowka-na-maslicach-we-wroclawiu"><figure><img src="img/r-szeregowka-na-maslicach-we-wroclawiu-1-720.webp" width="720" height="540" loading="lazy" alt="Szeregówka na Maślicach, Wrocław"><span class="ile">3 zdjęcia</span></figure><h3>Szeregówka na Maślicach</h3><p class="gdzie">Wrocław</p><p>Biel i szarość z morskim szkłem na ścianie oraz podświetlany barek od strony salonu.</p></button>
+<button class="real" data-r="dom-w-chambourcy"><figure><img src="img/r-dom-w-chambourcy-1-720.webp" width="720" height="540" loading="lazy" alt="Dom w Chambourcy, Francja"><span class="ile">3 zdjęcia</span></figure><h3>Dom w Chambourcy</h3><p class="gdzie">Francja</p><p>Prosta biała kuchnia z akcentem retro w starym domu pod Paryżem.</p></button>
+<button class="real" data-r="kawalerka-w-stylu-skandynawskim-puszczykowo"><figure><img src="img/r-kawalerka-w-stylu-skandynawskim-puszczykowo-1-720.webp" width="720" height="540" loading="lazy" alt="Kawalerka skandynawska, Puszczykowo"><span class="ile">3 zdjęcia</span></figure><h3>Kawalerka skandynawska</h3><p class="gdzie">Puszczykowo</p><p>Drewno, biel i szarość; mała przestrzeń wykorzystana co do centymetra.</p></button></div>
+  </div>
+</section>
+
+<section class="sek szary" id="o-mnie">
+  <div class="wrap omnie">
+    <div class="portret">
+      <img src="img/omnie-500.webp" width="500" height="704" loading="lazy" alt="Projektantka ARS Projekt z próbnikami kolorów">
+      <svg viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><path d="M38 100 L0 100 L0 18 L50 0 L100 18 L100 100"/></svg>
+    </div>
+    <div>
+      <h2>O mnie</h2>
+      <p>Wnętrzarstwa, nowych technologii i produkcji mebli na wymiar uczyłam się, pracując w Polsce i we Francji: jako projektantka, sprzedawczyni i manager eksportu na rynki zachodnie. Dzięki temu znam cały proces od strony technologii, obsługi klienta i prowadzenia inwestycji.</p>
+      <p>Prowadzę projekt od pierwszej koncepcji, przez wizualizacje i dokumentację wykonawczą, po nadzór nad realizacją. O wykończenie każdego detalu dbają doświadczeni fachowcy, z którymi współpracuję od lat.</p>
+      <blockquote class="cytat" style="margin-top:30px"><p>„Prostota jest szczytem wyrafinowania.”</p><cite>Leonardo da Vinci</cite></blockquote>
+    </div>
+  </div>
+</section>
+
+<section class="sek" id="kontakt">
+  <div class="wrap kontakt">
+    <div>
+      <h2>Porozmawiajmy o Twoim wnętrzu</h2>
+      <p style="font-size:18px;max-width:30em">Każda wycena jest indywidualna. Napisz kilka słów o swoim domu albo lokalu, a odpowiem i umówimy pierwsze spotkanie.</p>
+      <div class="dane">
+        <a href="tel:+48693307962"><small>Telefon</small><strong>+48 693 307 962</strong></a>
+        <a href="mailto:biuro@ars-projekt.pl"><small>E-mail</small><strong>biuro@ars-projekt.pl</strong></a>
+        <div class="social"><a href="https://www.instagram.com/annaarsprojekt/" rel="nofollow noopener" target="_blank">Instagram</a><a href="https://www.facebook.com/people/Ars-projektpl/100089284041741/" rel="nofollow noopener" target="_blank">Facebook</a></div>
+      </div>
+    </div>
+    <form id="form" novalidate>
+      <label>Imię<input name="imie" autocomplete="name"></label>
+      <label>Telefon lub e-mail<input name="kontakt" autocomplete="email"></label>
+      <label class="cala">Co projektujemy?<select name="rodzaj"><option>Całe mieszkanie lub dom</option><option>Salon i kuchnia</option><option>Łazienka</option><option>Sypialnia lub pokój dziecka</option><option>Wnętrze komercyjne</option><option>Taras lub ogród</option></select></label>
+      <label class="cala">Kilka słów o wnętrzu<textarea name="opis" placeholder="Metraż, miejscowość, etap budowy lub remontu"></textarea></label>
+      <div class="cala"><button class="btn" type="submit">Wyślij zapytanie</button></div>
+      <p class="uwaga cala" id="uwaga">Odpowiadam zwykle tego samego lub następnego dnia.</p>
+    </form>
+  </div>
+</section>
+</main>
+
+<footer class="stopka">
+  <div class="wrap">
+    <div class="gora">
+      <div><img src="img/logo.png" width="354" height="163" alt="ARS Projekt" loading="lazy"><p style="max-width:28em">Zapraszam do wspólnego tworzenia wymarzonej przestrzeni: pięknego designu, harmonii kolorów i radości z własnego miejsca na ziemi.</p></div>
+      <div><h4>Strona</h4><ul><li><a href="#oferta">Oferta</a></li><li><a href="#proces">Jak pracuję</a></li><li><a href="#realizacje">Realizacje</a></li><li><a href="#o-mnie">O mnie</a></li></ul></div>
+      <div><h4>Kontakt</h4><ul><li><a href="tel:+48693307962">+48 693 307 962</a></li><li><a href="mailto:biuro@ars-projekt.pl">biuro@ars-projekt.pl</a></li><li><a href="https://www.instagram.com/annaarsprojekt/" rel="nofollow noopener" target="_blank">Instagram</a></li><li><a href="https://www.facebook.com/people/Ars-projektpl/100089284041741/" rel="nofollow noopener" target="_blank">Facebook</a></li></ul></div>
+    </div>
+    <div class="dol"><span>© 2026 ARS Projekt</span><a class="wylinka-badge" href="https://wylinka.pl/?utm_source=ars-projekt.pl&amp;utm_medium=stopka&amp;utm_campaign=wykonanie" rel="noopener" title="Strona wykonana przez Wylinka"><svg viewBox="0 0 64 64" aria-hidden="true" focusable="false" fill="currentColor"><path d="M9.8 22.8l-1.2-7.9 2.2-3.7 15.5 4.6-.5 1.5-7.2 5.5 4.7 15.6 5-15.6 7 0 4.1 12.7-4.2-.9-2.6 1.8-.8-2.2-5.3 15.6-4.3 0 .4 .2-2.1 2.8-1.3-1.1 1.1-1.4-3.1 .2-.1-1.7 2.2-.1-5.7-16.5-4.8 .6-.8 3.1 0 .5-.3 .5 .8 2.2-1.6 .5-.4-1.3-.8 1.6-1.5-.8 .8-1.6-1.4 .6-.6-1.6 2.3-.8 .2-.4 1.3-4.8 5.9-.8-2.4-6.9zM15.2 13.7l-.1-.4-.4 .8-.1 .8 .1 1 .1 .4 .3 .7 .3-.9 .1-.7 0-.8z"/><path class="wy-pod" d="M37.1 49.8l-4.5-13.3 2.6-1.8 4.2 .9 .9 2.8 3-9.7 0-.5 .1-.8 3.2-8.4 .5-1 .6-1 .9-1.1 1.3-1 1.1-.7 1.4-.5 1.4-.3 .7 0 .9 0 1.2 .3 1.4 .6 .8 .5 .7 .7 .6 .7 .5 .9 .3 .9 .1 .9 0 .8-.2 .9-.5 .9-.5 .6-.7 .5-.7 .3-.1-.1 0-.1 .5-.5 .3-.7 .2-.5 0-.6-.1-.6-.3-.7-.4-.5-.4-.4-.5-.3-.6-.3-.7 0-.7 .1-.6 .1-.5 .4-.5 .5-.3 .5-.2 .7-.1 1.5-1.4 5.1-.8 3.3-.3 .7-.5 .7-6 17.5 1.9 .1-.1 1.7-3.1-.2 1.1 1.4-1.3 1.1-2.1-2.8 .4-.2z"/><path class="wy-old" d="M40.8 50l.4-.2-4.1 0-4.2-12.5 2.5-1.7 4.3 .9 .6 1.9 .6-1.6 0-.3 2.4-7.8 0-.5 .1-.8 3.2-8.4 .4-.8 .6-.9 .9-1.2 .9-.9 1.3-.8 1.4-.6 1.2-.3 1.4-.1 1.3 .1 .6 .2 .8 .3 1.1 .6 .9 .7 .7 .9 .5 .9 .3 .9 .1 1.1-.1 .9-.3 .9-.4 .7-.6 .7-.6 .4-.6 .2-.1-.1 0-.1 .5-.5 .3-.7 .2-.5 0-.5-.1-.6-.2-.6-.3-.5-.4-.5-.5-.3-.6-.3-.7-.1-.6 0-.6 .1-.6 .3-.6 .5-.3 .4-.2 .5-.1 .5-.1 1.5-1.4 5.1-.8 3.3-.3 .7-.5 .7-6 17.5 1.9 .1-.1 1.7-3.1-.2 1.1 1.4-1.3 1.1zM49.6 17.1l.6 1.7-1.5 1.9 .4 .4 1.8-2.1-.7-2.1zM48.1 28.3l.5 1.8-1.7 1.8 .4 .4 1.9-2-.6-2.2zM37.9 41.7l1.7-1.5-.4-.4-1.7 1.4zM42.6 38.7l-1.5 2.8 1.1 2-1.3 2.6 .5 .2 1.5-2.8-1.1-2 1.4-2.5z"/></svg><span>wykonanie: <b>Wylinka</b></span></a></div>
+  </div>
+</footer>
+
+<div class="mob" id="mob"><a href="tel:+48693307962">Zadzwoń</a><a href="#kontakt">Napisz</a></div>
+
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Zdjęcia realizacji">
+  <button class="zamk" aria-label="Zamknij">×</button>
+  <button class="pop" aria-label="Poprzednie zdjęcie"><svg viewBox="0 0 22 14"><path d="M22 7H2M8 1L2 7l6 6"/></svg></button>
+  <div class="lb-ram"><img alt=""></div>
+  <p class="lb-opis"></p>
+  <button class="nast" aria-label="Następne zdjęcie"><svg viewBox="0 0 22 14"><path d="M0 7h20M14 1l6 6-6 6"/></svg></button>
+</div>
+
+<script>window.REAL={"dom-fontenay-sous-bois": {"t": "Dom w Fontenay-sous-Bois, Francja", "z": ["img/r-dom-fontenay-sous-bois-1-1600.webp", "img/r-dom-fontenay-sous-bois-2-1600.webp"]}, "dom-w-gouvieux": {"t": "Dom w Gouvieux, Francja", "z": ["img/r-dom-w-gouvieux-1-1600.webp", "img/r-dom-w-gouvieux-2-1600.webp", "img/r-dom-w-gouvieux-3-1600.webp"]}, "lubnow": {"t": "Dom w Lubnowie, pod Wrocławiem", "z": ["img/r-lubnow-1-1600.webp", "img/r-lubnow-2-1600.webp", "img/r-lubnow-3-1600.webp"]}, "mieszkanie-na-krzykach-we-wroclawiu": {"t": "Mieszkanie na Krzykach, Wrocław", "z": ["img/r-mieszkanie-na-krzykach-we-wroclawiu-1-1600.webp", "img/r-mieszkanie-na-krzykach-we-wroclawiu-2-1600.webp", "img/r-mieszkanie-na-krzykach-we-wroclawiu-3-1600.webp"]}, "przychodnia-ginemedica-ovo-we-wroclawiu": {"t": "Przychodnia Ginemedica OVO, Wrocław", "z": ["img/r-przychodnia-ginemedica-ovo-we-wroclawiu-1-1600.webp", "img/r-przychodnia-ginemedica-ovo-we-wroclawiu-10-1600.webp", "img/r-przychodnia-ginemedica-ovo-we-wroclawiu-11-1600.webp"]}, "dom-w-kristianstad": {"t": "Dom w Kristianstad, Szwecja", "z": ["img/r-dom-w-kristianstad-1-1600.webp", "img/r-dom-w-kristianstad-2-1600.webp", "img/r-dom-w-kristianstad-3-1600.webp"]}, "mieszkanie-stare-miasto-we-wroclawiu": {"t": "Mieszkanie na Starym Mieście, Wrocław", "z": ["img/r-mieszkanie-stare-miasto-we-wroclawiu-1-1600.webp", "img/r-mieszkanie-stare-miasto-we-wroclawiu-10-1600.webp", "img/r-mieszkanie-stare-miasto-we-wroclawiu-11-1600.webp"]}, "szeregowka-na-maslicach-we-wroclawiu": {"t": "Szeregówka na Maślicach, Wrocław", "z": ["img/r-szeregowka-na-maslicach-we-wroclawiu-1-1600.webp", "img/r-szeregowka-na-maslicach-we-wroclawiu-2-1600.webp", "img/r-szeregowka-na-maslicach-we-wroclawiu-3-1600.webp"]}, "dom-w-chambourcy": {"t": "Dom w Chambourcy, Francja", "z": ["img/r-dom-w-chambourcy-1-1600.webp", "img/r-dom-w-chambourcy-2-1600.webp", "img/r-dom-w-chambourcy-3-1600.webp"]}, "kawalerka-w-stylu-skandynawskim-puszczykowo": {"t": "Kawalerka skandynawska, Puszczykowo", "z": ["img/r-kawalerka-w-stylu-skandynawskim-puszczykowo-1-1600.webp", "img/r-kawalerka-w-stylu-skandynawskim-puszczykowo-2-1600.webp", "img/r-kawalerka-w-stylu-skandynawskim-puszczykowo-3-1600.webp"]}}</script>
+<script defer src="app.js"></script>
+</body>
+</html>
